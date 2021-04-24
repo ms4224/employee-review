@@ -1,0 +1,19 @@
+create table employees (
+    firstName varchar,
+    lastName varchar not null unique
+);
+
+insert into employees values ('John', 'Doe');
+
+update employees set lastName = 'schakel', firstName = 'Matias' where lastName = 'Doe';
+
+create table test (
+    kanji varchar not null,
+    hiragana varchar not null,
+    english varchar not null,
+    deck varchar not null REFERENCES decks（deck),
+    sample_sentence varchar,
+    tag varchar
+)
+
+insert into flashcard_test values ('食べるxx', 'たべる', 'TO Eat', 'testing', 'hello i am a noob', 'sample tag')

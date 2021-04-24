@@ -14,7 +14,7 @@ export function runQuery<T>(queryString: string): Promise<T[]> {
       client.connect().then((res) => {
         client.query(queryString, [], (err, result) => {
           if (err) reject(err);
-          else resolve(<T[]>result.rows);
+          else resolve(<T[]>result?.rows);
           client.end();
         })
       }).catch(err => reject(err))
