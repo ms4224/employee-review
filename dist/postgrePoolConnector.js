@@ -3,8 +3,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.executeQuery = void 0;
 const pg_1 = require("pg");
 const connectionURL = `postgres://beobnflbcbzwcs:5302d50b288d551d1adeb1f1e95dfd201a11e91e07b942106f911bbc00a7e22a@ec2-54-167-152-185.compute-1.amazonaws.com:5432/d87d63kpujad1q`;
+console.log(process.env.DATABASE_URL, 'database url!');
 const pool = new pg_1.Pool({
-    connectionString: connectionURL,
+    connectionString: process.env.DATABASE_URL,
     ssl: true
 });
 // the pool with emit an error on behalf of any idle clients
@@ -25,7 +26,7 @@ function executeQuery(queryString) {
                 if (err) {
                     reject(err);
                 }
-                resolve(res.rows);
+                resolve(res);
             });
         });
     });
