@@ -15,5 +15,5 @@ app.use(express_1.default.static(path_1.default.join(__dirname, 'static')));
 app.listen(PORT, () => {
     console.log(`Example app listening at http://localhost:${PORT}`);
 });
-postgrePoolConnector_1.executeQuery('Select * from decks').then((res) => console.log(res), (fail) => console.log(fail));
+postgrePoolConnector_1.runQuery('Select * from decks').then((res) => console.log(res), (fail) => console.log(fail));
 //# sourceMappingURL=index.js.map
