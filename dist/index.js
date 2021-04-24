@@ -6,12 +6,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const path_1 = __importDefault(require("path"));
 const app = express_1.default();
-const port = 3000;
+const PORT = process.env.PORT || 3000;
 app.use(express_1.default.static(path_1.default.join(__dirname, 'static')));
 // app.get('/', (req, res) => {
 //   res.send('Hello World!')
 // })
-app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`);
+app.listen(PORT, () => {
+    console.log(`Example app listening at http://localhost:${PORT}`);
 });
 //# sourceMappingURL=index.js.map
