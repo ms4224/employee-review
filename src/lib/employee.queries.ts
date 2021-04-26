@@ -11,7 +11,7 @@ export function addEmployee(firstName: string, lastName: string): Promise<any[]>
 }
 
 export function removeEmployee(lastName: string): Promise<any[]> {
-    const queryString = `delete from employees where lastName='${lastName}');`;
+    const queryString = `delete from employees where lastName = '${lastName}';`;
     return runQuery(queryString);
 }
 
