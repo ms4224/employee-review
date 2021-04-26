@@ -5,12 +5,13 @@
   "main": "dist/index.js",
   "scripts": {
     "prebuildweb": "cd web && npm i",
-    "buildweb": "cd web && npm run build --prod",
+    "buildweb": "cd web && ng build --prod",
     "prebuild": "npm run buildweb",
     "build": "tsc",
     "prestart": "npm run build",
     "start": "node .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "preinstall": "npm install -g angular-cli"
   },
   "author": "",
   "license": "ISC",
