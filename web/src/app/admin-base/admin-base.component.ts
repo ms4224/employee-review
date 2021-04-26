@@ -9,15 +9,32 @@ import { ApiService } from '../services/api-service.service';
 })
 export class AdminBaseComponent implements OnInit, OnDestroy {
   private subscriptions: Subscription[] = [];
+  public viewEmployees = false;
+  public viewReviews  = false;
 
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {
-    this.apiService.getEmployees().subscribe(res => console.log('got a result', res));
+    
   }
 
   ngOnDestroy() {
     this.subscriptions.forEach(sub => sub.unsubscribe());
+  }
+
+  openEmployees() {
+    this._reset();
+    this.viewEmployees = true;
+  }
+
+  openReviews() {
+    this._reset();
+    this.viewReviews = true;
+  }
+
+  private _reset() {
+    this.viewEmployees = false;
+    this.viewReviews = false;
   }
 
 }

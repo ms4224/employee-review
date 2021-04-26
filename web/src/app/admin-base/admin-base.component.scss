@@ -1,0 +1,41 @@
+* {
+    box-sizing: border-box;
+}
+
+.admin-base {
+    width: 100vw;
+    height: 100vh;
+
+    .title-section {
+        height: 48px;
+        font-size: 24px;
+        padding: 12px;
+        border-bottom: 1px solid gray;
+    }
+
+    .main-contents {
+        display: flex;
+        height: calc(100% - 48px);
+        width: 100%;
+
+        .left-contents {
+            border-right: 1px solid gray;
+            width: 30%;
+            height: 100%;
+
+            .menu-item {
+                padding: 12px;
+                &:hover {
+                    background-color: rgb(226, 226, 226);
+                    cursor: pointer;
+                }
+            }
+        }
+    
+        .right-contents {
+            width: 70%;
+            height: 100%;
+        }
+
+    }
+}
