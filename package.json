@@ -4,8 +4,8 @@
   "description": "programming challenge Matias Schakel",
   "main": "dist/index.js",
   "scripts": {
-    "prebuildweb": "npm install -g @angular/cli && cd web && npm i",
-    "buildweb": "cd web && ng build --prod",
+    "prebuildweb": "cd web && npm i",
+    "buildweb": "cd web && npm run build --prod",
     "prebuild": "npm run buildweb",
     "build": "tsc",
     "prestart": "npm run build",
