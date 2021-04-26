@@ -1,6 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { ApiService } from '../services/api-service.service';
 
 @Component({
   selector: 'app-admin-base',
@@ -12,7 +11,7 @@ export class AdminBaseComponent implements OnInit, OnDestroy {
   public viewEmployees = false;
   public viewReviews  = false;
 
-  constructor(private apiService: ApiService) { }
+  constructor() { }
 
   ngOnInit() {
     

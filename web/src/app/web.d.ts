@@ -1,6 +1,6 @@
 type IEmployee = {
-    firstName: string;
-    lastName: string;
+    firstname: string;
+    lastname: string;
 }
 
 type IReview = {

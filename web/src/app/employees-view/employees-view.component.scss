@@ -1,0 +1,25 @@
+.component-frame {
+    padding: 8px;
+    .component-title {
+        font-size: 20px;
+    }
+    .employee {
+        padding: 8px;
+        &:hover {
+            background-color: rgb(226, 226, 226);
+            cursor: pointer;
+            button {
+                opacity: 100;
+            }
+        }
+        button {
+            opacity: 0;
+            margin-right: 12px;
+            &:hover {
+                background-color: red;
+                color: white;
+                cursor: pointer;
+            }
+        }
+    }
+}

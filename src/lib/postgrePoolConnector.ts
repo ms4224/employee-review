@@ -17,7 +17,7 @@ export function runQuery<T>(queryString: string): Promise<T[]> {
           else resolve(<T[]>result?.rows);
           client.end();
         })
-      }).catch(err => reject(err))
+      }).catch(err => reject(err.details))
     }
   )
 }

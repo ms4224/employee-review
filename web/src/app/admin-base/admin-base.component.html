@@ -5,6 +5,8 @@
       <div class="menu-item" (click)="openReviews()">View Review Titles</div>
       <div class="menu-item" (click)="openEmployees()">View Employees</div>
     </div>
-    <div class="right-contents"></div>
+    <div class="right-contents">
+      <app-employees-view *ngIf="viewEmployees"></app-employees-view>
+    </div>
   </div>
 </div>

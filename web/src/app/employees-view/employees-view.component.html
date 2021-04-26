@@ -1,0 +1,13 @@
+<div class="component-frame">
+    <div class="component-title">Employees List</div>
+    <div *ngIf="loading">Loading...</div>
+    <div *ngIf="!loading">
+        <div class="employee" *ngFor="let employee of employees">
+            <button (click)="deleteEmployee(employee.lastname)">Delete</button>
+            <span>{{employee.lastname}}, {{employee.firstname}}</span>
+        </div>
+        <div *ngIf="errorMsg" class="error">
+            {{errorMsg}}
+        </div>
+    </div>
+</div>
