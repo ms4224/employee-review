@@ -65,7 +65,7 @@ export class EmployeesViewComponent implements OnInit {
         this.loading = false;
       },
       err => {
-        this.errorMsg = err.error.detail,
+        this.errorMsg = `Error: ${err.error.detail}`,
         this.loading = false
       }
     )

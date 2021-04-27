@@ -13,6 +13,7 @@ import { EmployeesViewComponent } from './employees-view/employees-view.componen
 import { EmployeeAddComponent } from './employee-add/employee-add.component';
 import { FormsModule } from '@angular/forms';
 import { EmployeeEditComponent } from './employee-edit/employee-edit.component';
+import { ReviewsViewComponent } from './reviews-view/reviews-view.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { EmployeeEditComponent } from './employee-edit/employee-edit.component';
     CommonViewBaseComponent,
     EmployeesViewComponent,
     EmployeeAddComponent,
-    EmployeeEditComponent
+    EmployeeEditComponent,
+    ReviewsViewComponent,
   ],
   imports: [
     BrowserModule,

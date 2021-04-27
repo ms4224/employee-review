@@ -6,7 +6,7 @@
     </div><div>
         <label>Employee First Name: </label><input [(ngModel)]="firstName" [disabled]="loading">
     </div>
-    <div class="status-msg">{{msg}}</div>
+    <div class="error">{{msg}}</div>
     <div>
         <button (click)="onClickAdd()" [disabled]="loading || !firstName || !lastName">Submit</button>
     </div>
