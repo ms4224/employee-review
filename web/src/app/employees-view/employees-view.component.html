@@ -2,8 +2,10 @@
     <div class="component-title">Employees List</div>
     <div *ngIf="loading">Loading...</div>
     <div *ngIf="!loading">
+        <button (click)="openAddEmployee()">Add Employee</button>
         <div class="employee" *ngFor="let employee of employees">
             <button (click)="deleteEmployee(employee.lastname)">Delete</button>
+            <button (click)="openEditEmployee(employee.lastname, employee.firstname)">Edit</button>
             <span>{{employee.lastname}}, {{employee.firstname}}</span>
         </div>
         <div *ngIf="errorMsg" class="error">

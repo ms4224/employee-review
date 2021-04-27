@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { EmployeeAddComponent } from '../employee-add/employee-add.component';
+import { EmployeeEditComponent } from '../employee-edit/employee-edit.component';
 import { ApiService } from '../services/api-service.service';
 
 @Component({
@@ -12,7 +15,7 @@ export class EmployeesViewComponent implements OnInit {
   public errorMsg: string;
   public loading = false;
 
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService, private dialog: MatDialog) { }
 
   ngOnInit(): void {
     this._reload();
@@ -24,8 +27,34 @@ export class EmployeesViewComponent implements OnInit {
       () => {
         this._reload();
       },
-      err => this.errorMsg = err
+      err => this.errorMsg = err.error.detail
     )
+  }
+
+  openAddEmployee() {
+    const dialogRef = this.dialog.open(EmployeeAddComponent, {
+      width: '500px',
+      height: '600px',
+    });
+
+    dialogRef.afterClosed().subscribe(() => {
+      this._reload();
+    })
+  }
+
+  openEditEmployee(lastName: string, firstName: string) {
+    const dialogRef = this.dialog.open(EmployeeEditComponent, {
+      width: '500px',
+      height: '600px',
+      data: {
+        lastName: lastName,
+        firstName: firstName
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(() => {
+      this._reload();
+    })
   }
 
   private _reload() {
@@ -36,7 +65,7 @@ export class EmployeesViewComponent implements OnInit {
         this.loading = false;
       },
       err => {
-        this.errorMsg = err,
+        this.errorMsg = err.error.detail,
         this.loading = false
       }
     )

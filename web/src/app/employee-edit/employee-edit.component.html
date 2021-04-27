@@ -1,0 +1,16 @@
+<div>
+    <div class="title">
+        EDIT EMPLOYEE: {{data.lastName}}, {{data.firstName}}
+    </div>
+    <div>
+        <label>New Employee Last Name: </label><input [(ngModel)]="newLastName" [disabled]="loading">
+    </div>
+    <div>
+        <label>New Employee First Name: </label><input [(ngModel)]="newFirstName" [disabled]="loading">
+    </div>
+    <div class="status-msg">{{msg}}</div>
+    <div>
+        <button (click)="onClickEdit()" [disabled]="loading || !newFirstName || !newLastName">Submit</button>
+    </div>
+
+</div>

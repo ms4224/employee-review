@@ -1,0 +1,14 @@
+<div>
+    <div class="title">
+        ADD EMPLOYEE
+    </div><div>
+        <label>Employee Last Name: </label><input [(ngModel)]="lastName" [disabled]="loading">
+    </div><div>
+        <label>Employee First Name: </label><input [(ngModel)]="firstName" [disabled]="loading">
+    </div>
+    <div class="status-msg">{{msg}}</div>
+    <div>
+        <button (click)="onClickAdd()" [disabled]="loading || !firstName || !lastName">Submit</button>
+    </div>
+
+</div>
