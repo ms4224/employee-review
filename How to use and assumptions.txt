@@ -1,6 +1,6 @@
 **************************************HOW TO USE ********************
 Please have nodejs installed.
-go to top directory and run command "npm run start"
+go to top directory and run command "npm i" then "npm run start"
 
 If needed, can build the web files from top directory with "npm run buildweb" (needs angular cli installed for this)
 
