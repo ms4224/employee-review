@@ -1,0 +1,19 @@
+<div>
+    <div class="title">Feedback</div>
+    <table>
+        <tr>
+            <th>Review Title</th>
+            <th>Reviewee</th>
+            <th>Reviewer</th>
+            <th>Feedback</th>
+        </tr>
+        <tr *ngFor="let feedback of feedbacks">
+            <td><div>{{feedback.title}}</div></td>
+            <td><div>{{feedback.reviewee}}</div></td>
+            <td><div>{{feedback.reviewer}}</div></td>
+            <td><div>{{feedback.feedback}}</div></td>
+        </tr>
+    </table>
+    <div *ngIf="loading">Loading...</div>
+    <div class="error">{{msg}}</div>
+</div>

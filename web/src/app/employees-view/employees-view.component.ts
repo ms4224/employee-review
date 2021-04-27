@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { EmployeeAddComponent } from '../employee-add/employee-add.component';
 import { EmployeeEditComponent } from '../employee-edit/employee-edit.component';
 import { ApiService } from '../services/api-service.service';
+import { ViewFeedbackComponent } from '../view-feedback/view-feedback.component';
 
 @Component({
   selector: 'app-employees-view',
@@ -55,6 +56,16 @@ export class EmployeesViewComponent implements OnInit {
     dialogRef.afterClosed().subscribe(() => {
       this._reload();
     })
+  }
+
+  showFeedbackForEmployee(lastName: string) {
+    const dialogRef = this.dialog.open(ViewFeedbackComponent, {
+      width: '900px',
+      height: '600px',
+      data: {
+        reviewee: lastName
+      }
+    });
   }
 
   private _reload() {

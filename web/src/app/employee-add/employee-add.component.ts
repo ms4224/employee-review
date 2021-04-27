@@ -28,7 +28,6 @@ export class EmployeeAddComponent implements OnInit {
       },
       (err: HttpErrorResponse) => {
         this.msg = `There was an error: ${err.error.detail}`;
-        console.log(err, typeof(err));
         this.loading = false;
       }
     )

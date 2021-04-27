@@ -5,6 +5,7 @@ const connectionURL = `postgres://beobnflbcbzwcs:5302d50b288d551d1adeb1f1e95dfd2
 
 
 export function runQuery<T>(queryString: string): Promise<T[]> {
+  console.log(queryString);
   return new Promise(
     (resolve, reject) => {
       const client = new Client({

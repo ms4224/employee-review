@@ -9,6 +9,7 @@ import { map } from 'rxjs/operators';
 export class ApiService {
   private readonly employeeBaseUrl = 'api/employee';
   private readonly reviewBaseUrl = 'api/review';
+  private readonly feedbackBaseUrl = `${this.reviewBaseUrl}/feedback`;
 
   constructor(private http: HttpClient) { }
 
@@ -46,5 +47,14 @@ export class ApiService {
 
   public updateFeedback(title: string, reviewee: string, reviewer: string, feedback: string): Observable<void> {
     return this.http.put<void>(`${this.reviewBaseUrl}/${title}/${reviewee}/${reviewer}`, {feedback: feedback});
+  }
+
+  public getFeedback(reviewee?: string, reviewer?: string) {
+    return this.http.get<IFeedback[]>(this.feedbackBaseUrl, {
+      params: {
+        reviewee: reviewee,
+        reivewer: reviewer
+      }
+    })
   }
 }
