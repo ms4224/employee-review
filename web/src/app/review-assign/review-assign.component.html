@@ -1,0 +1,22 @@
+<div>
+    <div class="title">
+        Assign Review: {{data.title}}
+    </div>
+    <div>
+        <label>Reviewee Last Name (Person to be reviewed for {{data.title}}): </label>
+        <select [(ngModel)]="reviewee" [disabled]="loading">
+            <option *ngFor="let employee of employees" [ngValue]="employee.lastname">{{employee.lastname}}, {{employee.firstname}}</option>
+          </select>
+    </div>
+    <div>
+        <label>Reviewer Last Name (Person to conduct review):</label>
+        <select [(ngModel)]="reviewer" [disabled]="loading">
+            <option *ngFor="let employee of employees" [ngValue]="employee.lastname">{{employee.lastname}}, {{employee.firstname}}</option>
+          </select>
+    </div>
+    <div class="error">{{msg}}</div>
+    <div>
+        <button (click)="onClickAssign()" [disabled]="loading || !reviewee || !reviewer">Submit</button>
+    </div>
+
+</div>

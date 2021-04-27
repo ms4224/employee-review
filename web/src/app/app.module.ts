@@ -16,6 +16,7 @@ import { EmployeeEditComponent } from './employee-edit/employee-edit.component';
 import { ReviewsViewComponent } from './reviews-view/reviews-view.component';
 import { ReviewEditComponent } from './review-edit/review-edit.component';
 import { ReviewAddComponent } from './review-add/review-add.component';
+import { ReviewAssignComponent } from './review-assign/review-assign.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { ReviewAddComponent } from './review-add/review-add.component';
     ReviewsViewComponent,
     ReviewEditComponent,
     ReviewAddComponent,
+    ReviewAssignComponent,
   ],
   imports: [
     BrowserModule,

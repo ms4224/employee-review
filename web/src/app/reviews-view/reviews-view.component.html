@@ -4,6 +4,7 @@
         <button (click)="openAddReview()">Add Review</button>
         <div class="review" *ngFor="let review of reviews">
             <button (click)="openEditReview(review.title)">Edit</button>
+            <button (click)="openAssignReview(review.title)">Assign Review</button>
             <span>{{review.title}}</span>
         </div>
     </div>

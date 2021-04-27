@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ReviewAddComponent } from '../review-add/review-add.component';
+import { ReviewAssignComponent } from '../review-assign/review-assign.component';
 import { ReviewEditComponent } from '../review-edit/review-edit.component';
 import { ApiService } from '../services/api-service.service';
 
@@ -33,6 +34,20 @@ export class ReviewsViewComponent implements OnInit {
 
   openEditReview(title: string) {
     const dialogRef = this.dialog.open(ReviewEditComponent, {
+      width: '500px',
+      height: '600px',
+      data: {
+        title: title
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(() => {
+      this._reload();
+    })
+  }
+
+  openAssignReview(title: string) {
+    const dialogRef = this.dialog.open(ReviewAssignComponent, {
       width: '500px',
       height: '600px',
       data: {
