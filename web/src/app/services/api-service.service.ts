@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Injectable({
@@ -53,7 +53,16 @@ export class ApiService {
     return this.http.get<IFeedback[]>(this.feedbackBaseUrl, {
       params: {
         reviewee: reviewee,
-        reivewer: reviewer
+        reviewer: reviewer
+      }
+    })
+  }
+
+  public getEmptyFeedbacksForReviewer(reviewer: string) {
+    return this.http.get<IFeedback[]>(this.feedbackBaseUrl, {
+      params: {
+        status: 'incomplete',
+        reviewer: reviewer,
       }
     })
   }

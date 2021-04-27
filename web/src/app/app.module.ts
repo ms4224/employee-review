@@ -18,6 +18,7 @@ import { ReviewEditComponent } from './review-edit/review-edit.component';
 import { ReviewAddComponent } from './review-add/review-add.component';
 import { ReviewAssignComponent } from './review-assign/review-assign.component';
 import { ViewFeedbackComponent } from './view-feedback/view-feedback.component';
+import { FeedbackEditComponent } from './feedback-edit/feedback-edit.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { ViewFeedbackComponent } from './view-feedback/view-feedback.component';
     ReviewAddComponent,
     ReviewAssignComponent,
     ViewFeedbackComponent,
+    FeedbackEditComponent,
   ],
   imports: [
     BrowserModule,

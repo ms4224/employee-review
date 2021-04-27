@@ -6,7 +6,6 @@
   "scripts": {
     "prebuildweb": "cd web && npm i",
     "buildweb": "cd web && ng build --prod",
-    "prebuild": "npm run buildweb",
     "build": "tsc",
     "prestart": "npm run build",
     "start": "node .",

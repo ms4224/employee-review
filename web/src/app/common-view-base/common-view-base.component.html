@@ -1,3 +1,16 @@
-<p>
-  common-view-base works!
-</p>
+<div *ngIf="!loggedIn">
+  <div class="title">Login By Entering Your Last Name 
+  <div>
+    <input placeholder="Your last name" [(ngModel)]="lastName">
+  </div>
+  <div>
+    <button (click)="logIn()" [disabled]="!lastName">Login</button>
+  </div>
+</div>
+<div *ngIf="loading">loading...</div>
+<div class="error">{{msg}}</div>
+
+<app-feedback-edit *ngIf="loggedIn" [lastName]="lastName"></app-feedback-edit>
+
+<a routerLink="../admin">Go to admin</a>
+

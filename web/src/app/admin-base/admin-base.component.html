@@ -4,6 +4,7 @@
     <div class="left-contents">
       <div class="menu-item" (click)="openReviews()">View Review Titles</div>
       <div class="menu-item" (click)="openEmployees()">View Employees</div>
+      <a routerLink="../common">Go to common employee page</a>
     </div>
     <div class="right-contents">
       <app-employees-view *ngIf="viewEmployees"></app-employees-view>

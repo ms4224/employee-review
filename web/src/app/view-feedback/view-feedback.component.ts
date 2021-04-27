@@ -22,6 +22,9 @@ export class ViewFeedbackComponent implements OnInit {
       feedbacks => {
         this.feedbacks = feedbacks;
         this.loading = false;
+        if (this.feedbacks.length === 0) {
+          this.msg = 'No feedbacks found for this employee'
+        }
       },
       err => {
         this.msg = err.error.detail;

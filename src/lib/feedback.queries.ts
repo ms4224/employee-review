@@ -30,13 +30,19 @@ export function getFeedbackByReviewer(reviewer: string): Promise<IFeedback[]> {
     return runQuery(queryString);
 }
 
+export function getEmptyFeedbackByReviewer(reviewer: string): Promise<IFeedback[]> {
+    const queryString = `select * from feedback where reviewer = '${reviewer}' AND feedback IS NULL;`;
+    return runQuery(queryString);
+}
+
 export function getFeedbackByReviewee(reviewee: string): Promise<IFeedback[]> {
     const queryString = `select * from feedback where reviewee = '${reviewee}';`;
     return runQuery(queryString);
 }
 
-export function getFeedback(reviewee?: string, reviewer?: string): Promise<IFeedback[]> {
+export function getFeedback(reviewee?: string, reviewer?: string, status?: string): Promise<IFeedback[]> {
     if (reviewee) return this.getFeedbackByReviewee(reviewee);
+    else if (status === 'incomplete' && reviewer) return this.getEmptyFeedbackByReviewer(reviewer);
     else if (reviewer) return this.getFeedbackByReviewer(reviewer);
     else return runQuery('select * from feedback;');
 }
