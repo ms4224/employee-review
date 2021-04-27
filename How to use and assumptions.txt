@@ -11,6 +11,9 @@ You can create, delete, etc employees and view their feedback in the view Employ
 /common
 First "login", then can submit feedbacks for empty reviews. after submitting, they will not be available to update.
 
+CAN ALSO ACCESS ON:
+https://employee-review.herokuapp.com/common
+
 *********************ASSUMPTIONS*****************************************************************
 
 //assuming last names are unique, making last name a primary key for an employee
