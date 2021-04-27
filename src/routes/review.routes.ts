@@ -32,3 +32,9 @@ reviewRouter.put('/review/:title/:reviewee/:reviewer', (req, res) => {
         .then(() => res.status(200).send())
         .catch(err => res.status(400).send(err));
 })
+
+reviewRouter.get('/review/feedback', (req, res) => {
+    feedbackQueries.getFeedback(<string>req.query.reviewee, <string>req.query.reviewer)
+        .then((feedbacks) => res.status(200).send(feedbacks))
+        .catch(err => res.status(400).send(err));
+})
