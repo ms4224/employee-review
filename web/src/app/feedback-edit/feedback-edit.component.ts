@@ -42,7 +42,7 @@ export class FeedbackEditComponent implements OnInit {
         }
       },
       err => {
-        this.msg = err.error.msg;
+        this.msg = `Error: ${err.error.msg}`;
         this.loading = false;
       }
     )

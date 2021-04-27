@@ -1,2 +1,29 @@
 //assuming last names are unique, making last name a primary key for an employee
 //can give feedback to yourself
+//assuming the website does not have to be styled to look nice
+//assuming logging in, in the case of this system is just inputting your name (not secure)
+//assuming any inputs through the api are somehow safe (did not implement any security checks, this is not my field of expertise either)
+Assumes reviews consist of the following:
+
+Review Title, Reviewee - Reviewer pairs/feedback
+
+Tables are set up as: 
+create table employees (
+    firstName varchar not null,
+    lastName varchar not null unique PRIMARY KEY
+);
+
+create table reviews (
+    title varchar not null unique PRIMARY KEY
+)
+
+create table feedback (
+    reviewee varchar not null REFERENCES employees (lastName) ON UPDATE CASCADE ON DELETE CASCADE,
+    reviewer varchar not null REFERENCES employees (lastName) ON UPDATE CASCADE ON DELETE CASCADE,
+    feedback varchar,
+    title varchar not null REFERENCES reviews (title) ON UPDATE CASCADE ON DELETE CASCADE,
+    PRIMARY KEY(reviewee, reviewer, title)
+);
+
+How to use:
+route /admin

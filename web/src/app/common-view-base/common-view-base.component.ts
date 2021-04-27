@@ -26,7 +26,7 @@ export class CommonViewBaseComponent implements OnInit {
         if (filteredEmployeeList.length > 0) {
           this.loggedIn = true;
           this.userEmployee = filteredEmployeeList[0];
-          this.msg = `You are logged in as ${this.userEmployee.lastname}, ${this.userEmployee.firstname}`
+          this.msg = `You are logged in as ${this.userEmployee.lastname}, ${this.userEmployee.firstname}`;
         } else {
           this.msg = 'Your last name does not appear in the system. Please try again (names are case sensitive!)';
         }
