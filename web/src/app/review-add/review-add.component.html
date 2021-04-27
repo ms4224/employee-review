@@ -1,0 +1,6 @@
+<div class="title">Add Review</div>
+<div>
+    <label>Title of Review: </label><input [(ngModel)]="title" [disabled]="loading">
+</div>
+<div class="error">{{msg}}</div>
+<div><button (click)="onClickAdd()" [disabled]="loading || !title">Add Review</button></div>

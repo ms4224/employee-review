@@ -1,1 +1,12 @@
-<div class="title">Reviews</div>
+<div class="component-frame">
+    <div class="title">Reviews</div>
+    <div *ngIf="!loading">
+        <button (click)="openAddReview()">Add Review</button>
+        <div class="review" *ngFor="let review of reviews">
+            <button (click)="openEditReview(review.title)">Edit</button>
+            <span>{{review.title}}</span>
+        </div>
+    </div>
+    <div *ngIf="loading">Loading...</div>
+    <div class="error">{{msg}}</div>
+</div>

@@ -14,6 +14,8 @@ import { EmployeeAddComponent } from './employee-add/employee-add.component';
 import { FormsModule } from '@angular/forms';
 import { EmployeeEditComponent } from './employee-edit/employee-edit.component';
 import { ReviewsViewComponent } from './reviews-view/reviews-view.component';
+import { ReviewEditComponent } from './review-edit/review-edit.component';
+import { ReviewAddComponent } from './review-add/review-add.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { ReviewsViewComponent } from './reviews-view/reviews-view.component';
     EmployeeAddComponent,
     EmployeeEditComponent,
     ReviewsViewComponent,
+    ReviewEditComponent,
+    ReviewAddComponent,
   ],
   imports: [
     BrowserModule,

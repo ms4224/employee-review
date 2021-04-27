@@ -1,0 +1,13 @@
+<div>
+    <div class="title">
+        EDIT Review: {{data.title}}
+    </div>
+    <div>
+        <label>New Review Title: </label><input [(ngModel)]="newTitle" [disabled]="loading">
+    </div>
+    <div class="error">{{msg}}</div>
+    <div>
+        <button (click)="onClickEdit()" [disabled]="loading || !newTitle">Submit</button>
+    </div>
+
+</div>
