@@ -18,11 +18,11 @@ export class ReviewAssignComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.apiService.getEmployees().subscribe(employees => this.employees = employees);
-    this.employees = [
-      {lastname: 'hello', firstname: 'sup'},
-      {lastname: 'hello2', firstname: 'sup'},
-    ]
+    this.apiService.getEmployees().subscribe(employees => {
+      this.employees = employees;
+      this.reviewee = employees[0].lastname;
+      this.reviewer = employees[0].lastname;
+    });
   }
 
   onClickAssign() {

@@ -19,10 +19,12 @@ export class FeedbackEditComponent implements OnInit {
   }
 
   submitFeedback(feedback: IFeedback) {
+    this.loading = true;
     this.apiService.updateFeedback(feedback.title, feedback.reviewee, feedback.reviewer, feedback.feedback).subscribe(
       () => {
         this.loading = false;
         this.msg = `Sent feedback for ${feedback.title}, for employee: ${feedback.reviewee}`;
+        this._reloadFeedbacks();
       },
       err => {
         this.msg = err.error.msg;

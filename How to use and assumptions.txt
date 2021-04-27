@@ -1,7 +1,23 @@
+**************************************HOW TO USE ********************
+Please have nodejs installed.
+go to top directory and run command "npm run start"
+
+If needed, can build the web files from top directory with "npm run buildweb" (needs angular cli installed for this)
+
+UI:
+/admin
+You can create new reviews and assign them to employees in the Reviews section (click on left side tab panel)
+You can create, delete, etc employees and view their feedback in the view Employees section (click on left side tab panel)
+/common
+First "login", then can submit feedbacks for empty reviews. after submitting, they will not be available to update.
+
+*********************ASSUMPTIONS*****************************************************************
+
 //assuming last names are unique, making last name a primary key for an employee
 //can give feedback to yourself
 //assuming the website does not have to be styled to look nice
 //assuming logging in, in the case of this system is just inputting your name (not secure)
+//UI assumes it's ok to only name an employee's last name to reference him/her
 //assuming any inputs through the api are somehow safe (did not implement any security checks, this is not my field of expertise either)
 Assumes reviews consist of the following:
 

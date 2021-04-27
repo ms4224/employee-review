@@ -11,7 +11,7 @@
             <td><div>{{feedback.title}}</div></td>
             <td><div>{{feedback.reviewee}}</div></td>
             <td><div><textarea [(ngModel)]="feedback.feedback" maxlength="150"></textarea></div></td>
-            <td><button (click)="submitFeedback(feedback)" [disabled]="!feedback.feedback">submit feedback</button></td>
+            <td><button (click)="submitFeedback(feedback)" [disabled]="!feedback.feedback || loading">submit feedback</button></td>
         </tr>
     </table>
     <div *ngIf="loading">Loading...</div>
